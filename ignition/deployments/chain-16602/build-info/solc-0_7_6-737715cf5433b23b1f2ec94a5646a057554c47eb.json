@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_7_6-737715cf5433b23b1f2ec94a5646a057554c47eb",
+  "solcVersion": "0.7.6",
+  "solcLongVersion": "0.7.6+commit.7338295f",
+  "userSourceNameMap": {
+    "contracts/TestVerification.sol": "project/contracts/TestVerification.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "istanbul",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/TestVerification.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity =0.7.6;\n\ncontract TestVerification {\n    string public constant name = \"Test Contract\";\n    uint256 public immutable deployTime;\n\n    constructor() {\n        deployTime = 23333;\n    }\n\n    function getMessage() external pure returns (string memory) {\n        return \"Hello Conflux!\";\n    }\n}"
+      }
+    }
+  }
+}

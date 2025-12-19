@@ -8,10 +8,15 @@ import { configVariable, defineConfig } from "hardhat/config";
 import dotenv from "dotenv";
 dotenv.config();
 const { DEPLOYER_KEY, ETHERSCAN_API_KEY } = process.env;
+console.log(`DEPLOYER_KEY ===1===`, {
+  DEPLOYER_KEY,
+  ETHERSCAN_API_KEY,
+})
 
 // 0x12cAef034a8D1548a81fd7d677640d1070a1Ec17
 const DEFAULT_DEPLOYER = "36b9e861b63d3509c88b7817275a30d22d62c8cd8fa6486ddee35ef0d8e0495f";
 const accounts = [DEPLOYER_KEY ? DEPLOYER_KEY : DEFAULT_DEPLOYER];
+console.log(`DEPLOYER_KEY ===2===`, accounts)
 
 export default defineConfig({
   plugins: [
@@ -21,7 +26,13 @@ export default defineConfig({
   solidity: {
     profiles: {
       default: {
-        version: "0.8.28",
+        version: "0.7.6",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
       },
       production: {
         version: "0.7.6",
