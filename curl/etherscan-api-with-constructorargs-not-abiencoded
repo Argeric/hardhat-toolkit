@@ -1,0 +1,40 @@
+expect response:
+{"status":"0","message":"NOTOK","result":"Invalid constructor arguments provided. Please verify that they are in ABI-encoded format"}
+
+curl -s -X POST 'https://api.etherscan.io/v2/api?chainid=560048' \
+-H 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'module=contract' \
+--data-urlencode 'action=verifysourcecode' \
+--data-urlencode 'apikey=W3HFCB87IWVV6PK7ITW8287FAU367ESMVA' \
+--data-urlencode 'contractaddress=0x4da77B1E0b450c0b2319D7f84450b5F58A253e0f' \
+--data-urlencode 'codeformat=solidity-single-file' \
+--data-urlencode 'contractname=TestVerification' \
+--data-urlencode 'compilerversion=v0.7.6+commit.7338295f' \
+--data-urlencode 'optimizationUsed=1' \
+--data-urlencode 'runs=200' \
+--data-urlencode 'constructorArguments=0000000000000000' \
+--data-urlencode 'sourceCode=// SPDX-License-Identifier: MIT
+pragma solidity =0.7.6;
+
+contract TestVerification {
+string public constant name = "Test Contract";
+uint256 public immutable deployTime;
+string private _name;
+string private _symbol;
+uint8 private _decimals;
+
+constructor(
+string memory name_,
+string memory symbol_,
+uint8 decimals_
+) {
+deployTime = 20251224007;
+_name = name_;
+_symbol = symbol_;
+_decimals = decimals_;
+}
+
+function getMessage() external pure returns (string memory) {
+return "Hello Conflux!";
+}
+}'

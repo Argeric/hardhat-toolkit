@@ -1,0 +1,5 @@
+curl -X 'POST' \
+  'https://evmtestnet-stage.confluxscan.org/v1/contract/verify' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '@87618aa0.json'

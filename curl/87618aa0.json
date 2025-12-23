@@ -1,0 +1,9 @@
+{
+  "address": "0x02e2fc28eebc390aacf0df99607326a98c7c0fd1",
+  "codeFormat": "solidity-single-file",
+  "compiler": "0.7.6",
+  "optimizeRuns": 200,
+  "name": "TestVerification",
+  "constructorArgs": "000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000056e616d6538000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000773796d626f6c3800000000000000000000000000000000000000000000000000",
+  "sourceCode": "// SPDX-License-Identifier: MIT\npragma solidity =0.7.6;\n\ncontract TestVerification {\n    string public constant name = \"Test Contract\";\n    uint256 public immutable deployTime;\n    string private _name;\n    string private _symbol;\n    uint8 private _decimals;\n\n    constructor(\n        string memory name_,\n        string memory symbol_,\n        uint8 decimals_\n    ) {\n        deployTime = 20251224008;\n        _name = name_;\n        _symbol = symbol_;\n        _decimals = decimals_;\n    }\n\n    function getMessage() external pure returns (string memory) {\n        return \"Hello Conflux!\";\n    }\n}"
+}
