@@ -21,19 +21,19 @@ export default defineConfig({
   solidity: {
     profiles: {
       default: {
-        version: "0.7.6",
+        version: "0.4.11",
         settings: {
           optimizer: {
-            enabled: true,
+            enabled: false,
             runs: 200,
           },
         },
       },
       production: {
-        version: "0.7.6",
+        version: "0.4.11",
         settings: {
           optimizer: {
-            enabled: true,
+            enabled: false,
             runs: 200,
           },
         },
